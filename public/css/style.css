@@ -1,0 +1,59 @@
+.sidebar{
+    width: 200px;
+    background-color: rgb(128, 128, 128);
+    padding: 20px 0 0 0;
+    height: 100vh;
+    position: relative;
+    top: -24px;
+    left: -12px;
+}
+
+.sidebar img{
+    border-radius: 50px;
+}
+
+.sidebar h5{
+    color: white;
+    margin-top: 10px;
+}
+
+/* .items-container{
+
+} */
+
+.menu-item{
+    width: 200px;
+    padding: 10px 0 10px 20px;
+    transition: background-color .5s;
+    cursor: pointer;
+}
+
+.menu-item:hover{
+    background-color:lightgray;
+}
+
+.items-container a{
+    text-decoration: none;
+    color: white;
+}
+
+/* Modal Styles */
+.modal-style{
+    width: 60%;
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    box-shadow: 0 0 50px darkgrey;
+    display: none;
+}
+
+.modal-style .close-modal{
+    font-weight: 700;
+    cursor: pointer;
+}
+.modal-style .close-modal:hover{
+    color: red;
+    
+}

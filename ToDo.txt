@@ -1,0 +1,66 @@
+User view   
+ *   -Set up links of users to direct to their respective views using their routes
+*    -give ability to lock them out of their account by changing their active status
+
+Set up redirect for inactive accounts and test
+*    -add isActive requirement to middleware
+ *   -set up placeholder for standard users to display their credentials when they log in, and that is all for now
+*    -test to see if normal users are redirected when they try to access Admin content
+
+
+Set up database for prospects
+    -Make the migration
+    - Create the Model
+
+    -Database Schema
+        Schema::create...
+        created_by --> int --> linked to a user or 
+        Name --> String
+        Phone --> String
+        Phone 2 --> String
+        Address --String
+        City --> String
+        province_state --> String
+        Country --> String
+        Notes --> text
+        prospect_message --> text --> likely created by the prospect when they filled out the form on the website
+        isClient --> tinyInteger --> check whether the prospect is a isClient
+        assigned_to --> integer --> references a specific user id
+        isClaimable --> tinyInteger --> This will give users the ability to assign the user to themselves, otherwise only administrators can assign the leads --> default is going to be: 0
+
+    -Setup database seeder with a few prospects
+    -Give admin the ability to create new leads
+    -Give admin the access to assign the leads
+
+    -Build out a basic HUD of activity for individual users to view their prospects that have been assigned_to
+
+    - Make a notes/activity section for prospects
+    - Give the ability to tag other users in posts to notify them
+    - Give the ability to upload documents related to that particular client
+
+    -Build out an estimates table
+        Schema::create...
+        created_by --> int --> users id
+        prospect_id --> int --> prospect id
+        name/title --> varchar
+        details --> JsonType --> text
+        revisions --> JsonType
+        status --> varchar --> default: 'in progress'. Other options -> 'Awaiting revisions', 'revised', 'Awaiting approval', 'Approved' 
+        isSent --> tinyInt --> default 0
+        isReceived --> tinyInteger --> default 0
+        isAccepted --> tinyInteger --> default 0
+        workOrders --> varchar
+
+
+
+
+
+Build out internal messaging system
+    -Give the ability to have multiple users on a single messaging thread
+
+
+/*
+**** Next additions to the web app ****
+*/
+
+Build out the users section of the 
