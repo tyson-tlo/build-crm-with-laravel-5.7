@@ -1,35 +1,39 @@
-User view   
- *   -Set up links of users to direct to their respective views using their routes
-*    -give ability to lock them out of their account by changing their active status
+-complete validation by sending errors to form and populating it with the data provided initially by the users
+-Fix form in add prospect. make it so it has 2 columns instead of big one to make it more compact.
+-Add individual forms to edit infdividual items, then submit them and redirect back to prospects page
+-Give the ability to assign/re-assign
+-Build out notes/activity section
+-give the ability to upload documents relative to that user and record the activity
 
-Set up redirect for inactive accounts and test
-*    -add isActive requirement to middleware
- *   -set up placeholder for standard users to display their credentials when they log in, and that is all for now
-*    -test to see if normal users are redirected when they try to access Admin content
+2 tables
+------------------------
+Table 1: Notes
+Table 2: Activity
+
+Table 1: Schema (notes)
+------------------------
+created_by -> integer 
+note_type -> varchar -> default('note')
+note -> text
+note_history -> text -> to store JSON data related to history
+
+Create a controller in general profile accessible by both admin and users
 
 
-Set up database for prospects
-    -Make the migration
-    - Create the Model
+Table 2: Schema
+-----------------------
+created_by -> integer 
+activity_type -> default('activity')
+            Types could be:
+            -uploaded a file
+            -reached out to client (possibility to link to phone conversation if using a VOIP provider)
+            -client meeting
+            -estimate created 
+            -estimate modified
+            -estimate accepted 
+details -> text Stored as JSON
 
-    -Database Schema
-        Schema::create...
-        created_by --> int --> linked to a user or 
-        Name --> String
-        Phone --> String
-        Phone 2 --> String
-        Address --String
-        City --> String
-        province_state --> String
-        Country --> String
-        Notes --> text
-        prospect_message --> text --> likely created by the prospect when they filled out the form on the website
-        isClient --> tinyInteger --> check whether the prospect is a isClient
-        assigned_to --> integer --> references a specific user id
-        isClaimable --> tinyInteger --> This will give users the ability to assign the user to themselves, otherwise only administrators can assign the leads --> default is going to be: 0
-
-    -Setup database seeder with a few prospects
-    -Give admin the ability to create new leads
+   
     -Give admin the access to assign the leads
 
     -Build out a basic HUD of activity for individual users to view their prospects that have been assigned_to

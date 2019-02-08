@@ -2,7 +2,7 @@
     @csrf 
     <div class="form-group">
         <label for="name">New User Name:</label>
-        <input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" name="name">
+        <input type="text" class="form-control {{ $errors->has('name') ? 'is-invalid' : '' }}" name="name" value="{{ old('name') }}">
         @if($errors->has('name'))
             <div class="invalid-feedback">
                 {{ $errors->first('name') }}
@@ -11,7 +11,7 @@
     </div>
     <div class="form-group">
         <label for="email">New User Email</label>
-        <input type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" name="email">
+        <input type="text" class="form-control {{ $errors->has('email') ? 'is-invalid' : '' }}" name="email" value="{{ old('email') }}">
         @if($errors->has('email'))
             <div class="invalid-feedback">
                 {{ $errors->first('email') }}
@@ -20,7 +20,7 @@
     </div>
     <div class="form-group">
         <label for="role">Select New User Role:</label>
-        <select name="role" class="form-control {{ $errors->has('role') ? 'is-invalid' : '' }}">
+        <select name="role" class="form-control {{ $errors->has('role') ? 'is-invalid' : '' }}" value="{{ old('role') }}">
             <option value="user" default>User</option>
             <option value="admin">Admin</option>
         </select>

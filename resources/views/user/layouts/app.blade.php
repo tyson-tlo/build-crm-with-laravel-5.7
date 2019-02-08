@@ -7,8 +7,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    {{-- <title>{{ config('app.name', 'Laravel') }}</title> --}}
-    <title>{{ 'Admin Area || ' . Auth::user()->name}} </title>
+    <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
     <script src="{{ asset('js/app.js') }}" defer></script>
@@ -19,13 +18,10 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
-    @stack('admin.layouts.styles')
 </head>
 <body>
     <div id="app">
-        <nav class="navbar navbar-expand-lg navbar-light navbar-laravel" style="position: fixed; width: 100%; z-index: 2;">
+        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -76,41 +72,9 @@
             </div>
         </nav>
 
-        <main class="py-4 container-fluid">
-            <div id="sidebar" class="sidebar">
-                <div class="text-center">
-                    <img src="https://via.placeholder.com/100" alt="">
-                    <h5>{{ Auth::user()->name}}</h5>
-                </div>
-                <div class="items-container">
-                <a href="{{ route('home')}}">
-                        <h6 class="menu-item"><i class="fas fa-tachometer-alt"></i> Dashboard</h6>
-                    </a>
-                    <a href="{{ route('admin.users') }}">
-                        <h6 class="menu-item"><i class="fas fa-users"></i> Users</h6>
-                    </a>
-                    <a href="{{ route('admin.prospects') }}">
-                        <h6 class="menu-item"><i class="fas fa-users"></i> Prospects</h6>
-                    </a>
-                    <a href="#">
-                        <h6 class="menu-item"><i class="far fa-handshake"></i>Clients</h6>
-                    </a>
-                    <a href="#">
-                        <h6 class="menu-item"><i class="fas fa-table"></i> Estimates</h6>
-                    </a>
-                    <hr>
-                    <a href="#">
-                        <h6 class="menu-item"><i class="fas fa-cog"></i> Settings</h6>
-                    </a>
-                </div>
-            </div>{{-- End of sidebar --}}
-            
-            <div class="content" style="margin-top: 3.5rem;">
-                @yield('content')
-            </div>
+        <main class="py-4">
+            @yield('content')
         </main>
-        
     </div>
-    @stack('admin.layouts.scripts.scripts')
 </body>
 </html>

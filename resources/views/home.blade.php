@@ -18,14 +18,7 @@
                 </div>
             </div>
             <div class="card mt-5">
-                <div class="card-header">
-                    Welcome {{Auth::user()->name}}
-                </div>
-                <div class="card-body">
-                    <h5>{{Auth::user()->name}}</h5>
-                    <h5>{{Auth::user()->email}}</h5>
-                    <h5>{{Auth::user()->role}}</h5>
-                </div>
+                This is the Home view. To Be Deleted.
             </div>
         </div>
     </div>

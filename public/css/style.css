@@ -3,9 +3,10 @@
     background-color: rgb(128, 128, 128);
     padding: 20px 0 0 0;
     height: 100vh;
-    position: relative;
-    top: -24px;
-    left: -12px;
+    position: fixed;
+    top: 3.5rem;
+    left: 0px;
+    display: block;
 }
 
 .sidebar img{
